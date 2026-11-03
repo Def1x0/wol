@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: wol-telegram-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python wol_pythonanywhere.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TARGET_MAC
+        value: D8:43:AE:69:6C:01
+      - key: ROUTER_IP
+        value: 80.234.76.238
+      - key: WOL_PORT
+        value: 9
